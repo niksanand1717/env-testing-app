@@ -6,7 +6,10 @@
     "dev": "RUNTIME_MIDDLEWARE_URL=https://api-runtime.goedmo.com next dev --turbopack",
     "build": "next build",
     "start": "RUNTIME_MIDDLEWARE_URL=https://api-runtime.goedmo.com next start --port 3030",
-    "lint": "next lint"
+    "lint": "next lint",
+    "docker:build": "docker build -t env-testing-app .",
+    "docker:run": "docker run -p 3000:3000 env-testing-app",
+    "docker:dev": "docker build -t env-testing-app . && docker run -p 3000:3000 env-testing-app"
   },
   "dependencies": {
     "dotenv": "^17.2.0",
