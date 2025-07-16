@@ -3,6 +3,10 @@ import Link from "next/link";
 import React from "react";
 
 export default function DisplayBoxes() {
+    const [runtime_env, server_env, client_env] = [process.env.RUNTIME_MIDDLEWARE_URL, process.env.MIDDLEWARE_URL, process.env.NEXT_PUBLIC_MIDDLEWARE_URL];
+
+
+    console.log("Client-Page: ", {runtime_env, server_env, client_env});
     return (
         <div className="min-h-screen p-8 sm:p-20 flex flex-col items-center justify-center">
             <div className="fixed top-0 left-0 p-4 z-10">
