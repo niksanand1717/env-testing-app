@@ -5,7 +5,7 @@
   "scripts": {
     "dev": "RUNTIME_MIDDLEWARE_URL=https://api-runtime.goedmo.com next dev --turbopack",
     "build": "next build",
-    "start": "RUNTIME_MIDDLEWARE_URL=https://api-runtime.goedmo.com next start --port 3030",
+    "start": "next start",
     "lint": "next lint",
     "docker:build": "docker build -t env-testing-app .",
     "docker:run": "docker run -p 3000:3000 env-testing-app",

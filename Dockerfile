@@ -7,7 +7,7 @@ WORKDIR /app
 # 3. Copy files
 COPY package.json package-lock.json* ./
 COPY tsconfig.json ./
-COPY next.config.ts ./
+COPY next.config.mjs ./
 COPY postcss.config.mjs ./
 COPY eslint.config.mjs ./
 COPY .env ./
@@ -34,12 +34,12 @@ ENV NODE_ENV=production
 # 9. Install only production dependencies
 COPY --from=builder /app/package.json ./
 COPY --from=builder /app/package-lock.json* ./
-RUN npm install --omit=dev
+RUN npm install
 
 # 10. Copy necessary build output
 COPY --from=builder /app/.next ./.next
 COPY --from=builder /app/public ./public
-COPY --from=builder /app/next.config.ts ./next.config.ts
+COPY --from=builder /app/next.config.mjs ./next.config.mjs
 COPY --from=builder /app/.env .env
 
 # 11. Start the Next.js app
